@@ -1,0 +1,33 @@
+@import 'color';
+@mixin flex($flexdir) {
+    display: flex;
+    flex-direction: $flexdir;
+    align-items: center;
+    justify-content: center;
+    font-size: $smallfont
+}
+@mixin trf {
+    display: flex;
+    flex-direction: $flexdir;
+    align-items: center;
+    justify-content: center;
+    font-size: $smallfont;
+}
+
+div {
+    @include flex(column);
+
+    p {
+        font-size: 2px;
+        & + li {
+            display: none;
+        }
+    } 
+    & + p:hover {
+        background: $primary;
+    }
+}
+
+.ball {
+    @extend div
+}
